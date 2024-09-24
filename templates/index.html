@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hate Speech Analysis</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Hate Speech Analysis</h1>
+
+    <!-- Main layout section -->
+    <div class="main-layout">
+      <!-- Left side: Input form -->
+      <div class="input-section">
+        <p>Enter a statement to analyze the nature of hate speech and generate counterspeech.</p>
+
+        <form id="demo-form">
+          <label for="statement">Statement *</label>
+          <input type="text" id="statement" name="statement" placeholder="Enter a potentially offensive statement" required>
+          <button type="submit">Submit</button>
+        </form>
+
+        <!-- Loading spinner for feedback -->
+        <div id="loading-indicator" style="display: none;">
+          <p>Processing... Please wait.</p>
+          <div class="loader"></div>
+        </div>
+      </div>
+
+      <!-- Right side: Analysis dialog boxes -->
+      <div class="analysis-section">
+        <div class="dialog" id="dialog-nature" style="display: none;">
+          <p><strong>Nature of the hate speech statement:</strong></p>
+          <p class="answer" id="nature"></p>
+        </div>
+
+        <div class="dialog" id="dialog-group" style="display: none;">
+          <p><strong>Targeted social or demographic group:</strong></p>
+          <p class="answer" id="group"></p>
+        </div>
+
+        <div class="dialog" id="dialog-bias" style="display: none;">
+          <p><strong>Implied bias or stereotype:</strong></p>
+          <p class="answer" id="bias"></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section asking for counterspeech generation -->
+    <div class="counterspeech-confirmation" id="counterspeech-confirmation" style="display: none;">
+      <p>Would you like to generate counterspeech for this statement?</p>
+      <button id="yes-btn">Yes</button>
+      <button id="no-btn">No</button>
+    </div>
+
+    <!-- Bottom (centered): Counterspeech and Fact dialog boxes -->
+    <div class="counterspeech-fact-section">
+      <div class="counterspeech-dialog dialog" id="dialog-counterspeech" style="display: none;">
+        <p><strong>Counter-narrative for the statement:</strong></p>
+        <p class="answer" id="counterspeech"></p>
+      </div>
+
+      <div class="fact-dialog dialog" id="dialog-fact" style="display: none;">
+        <p><strong>Related Fact:</strong></p>
+        <p class="answer" id="fact"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

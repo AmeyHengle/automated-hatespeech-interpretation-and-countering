@@ -1,0 +1,162 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 50px auto;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+/* Layout using flexbox */
+.main-layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.input-section {
+  flex: 1;
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.input-section form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.analysis-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dialog {
+  background-color: #e9ecef;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.answer {
+  font-weight: bold;
+  color: #007BFF;
+}
+
+/* Loading spinner */
+#loading-indicator {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.loader {
+  display: inline-block;
+  width: 60px;
+  height: 10px;
+  position: relative;
+}
+
+.loader::before, .loader::after, .loader span {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #007BFF;
+  border-radius: 50%;
+  position: absolute;
+  animation: loader-animation 1.5s infinite ease-in-out;
+}
+
+.loader::before {
+  left: 0;
+  animation-delay: 0s;
+}
+
+.loader span {
+  left: 20px;
+  animation-delay: 0.3s;
+}
+
+.loader::after {
+  left: 40px;
+  animation-delay: 0.6s;
+}
+
+@keyframes loader-animation {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+/* Counterspeech and Fact sections side by side */
+.counterspeech-fact-section {
+  margin-top: 40px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.counterspeech-dialog {
+  width: 40%;
+}
+
+.fact-dialog {
+  width: 40%;
+}
+
+/* Confirmation section for generating counterspeech */
+.counterspeech-confirmation {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.counterspeech-confirmation button {
+  padding: 10px;
+  margin: 10px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.counterspeech-confirmation button:hover {
+  background-color: #218838;
+}
