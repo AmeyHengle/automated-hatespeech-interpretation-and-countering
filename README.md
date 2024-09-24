@@ -1,2 +1,2 @@
-# automated-hatespeech-interpretation-and-countering
+# Automated-hatespeech-interpretation-and-countering
 A repository for deploying hatespeech interpretation and countering methods
