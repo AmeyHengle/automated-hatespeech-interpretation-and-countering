@@ -1,7 +1,7 @@
 # Replace this with your actual model code
 import time
 import json
-from projects.hate_speech_demo.inference_api import generate_counternarrative, generate_hs_explanations
+from inference_api import generate_counternarrative, generate_hs_explanations
 from semantic_similarity import find_most_similar_fact
 from inference_custom import CustomLLMInference
 model = CustomLLMInference('t5-small')
